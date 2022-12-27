@@ -1,0 +1,15 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        bind:
+            $securityKey: '%cleverage_sylius_dpd.securityKey%'
+    
+    CleverAge\SyliusDpdPlugin\:
+        resource: '../../*'
+        exclude: '../../{Entity,Migrations,CleverAgeSyliusDpdPlugin.php}'
+    
+    CleverAge\SyliusDpdPlugin\Controller\:
+        resource: '../../Controller'
+        tags: [ 'controller.service_arguments' ]

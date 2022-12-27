@@ -1,0 +1,9 @@
+shop_ajax_dpd_set_pickup_point_by_id_to_order:
+    path: /ajax/dpd/pickup-points/set-to-order
+    methods: [ POST, PUT ]
+    controller: CleverAge\SyliusDpdPlugin\Controller\Shop\SetDpdPickupPointIdToOrderAction
+
+shop_ajax_dpd_remove_pickup_point_by_id_to_order:
+    path: /ajax/dpd/pickup-points/remove-to-order
+    methods: [ DELETE ]
+    controller: CleverAge\SyliusDpdPlugin\Controller\Shop\RemoveDpdPickupPointIdToOrderAction

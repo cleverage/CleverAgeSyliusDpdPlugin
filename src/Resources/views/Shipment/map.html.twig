@@ -1,0 +1,35 @@
+<div class="dpd-map-container {% if order.pickupPointId %}hasPickupPoint{% endif %}">
+    <div class="dpd-map-content">
+        <div class="points-list">
+            <p>{{ 'clever_age.ui.map.nearest_pickup_points'|trans }}</p>
+            <ul>
+                {% for pickupPoint in pickupPoints %}
+                    <li>
+                        <span>
+{#                            <i>{{ pickupPoint.name }}</i> #}
+                            <strong>{{ pickupPoint.name }}</strong>
+                            <span>{{ pickupPoint.address }}, {{ pickupPoint.zipCode }}, {{ pickupPoint.city }}</span>
+                        </span>
+                        <div class="pickup-point-btn">
+                            <a onclick="selectDpdPickupPoint(this)"
+                               id="dpd-choose-pickup-point"
+                               class="btn btn-primary bg-primary"
+                               data-identifier="{{ pickupPoint.pudoId }}"
+                            >
+                                <span>{{ 'clever_age.ui.map.choose_this_pickup_point'|trans }}</span>
+                            </a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div id="dpd-pickup-points-map">
+            <div id="dpd-map"
+                 data-points="{{ pickupPoints|json_encode }}"
+                 data-set-pickup-url="{{ path('shop_ajax_dpd_set_pickup_point_by_id_to_order') }}"
+            >
+            </div>
+        </div>
+    </div>
+</div>

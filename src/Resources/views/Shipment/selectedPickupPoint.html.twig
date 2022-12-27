@@ -1,0 +1,19 @@
+{% set pickupPoint = '' %}
+
+ {% if order.dpdPickupPointId %}
+     {% set pickupPoint = cleverage_dpd_get_pudo_by_id(order.dpdPickupPointId) %}
+ {% endif %}
+
+<div class="dpd-selected-pickup-container" {% if not order.dpdPickupPointId %}hidden{% endif %}>
+    <p><strong>{{ 'clever_age.ui.pickup_point.chosen'|trans }}</strong></p>
+    <p id="dpd-selected-pickup">{{ pickupPoint }}</p>
+    <button id="dpd-remove-pickup"
+            class="dpd-change-pickup btn btn-primary"
+            data-remove-url="{{ path('shop_ajax_dpd_remove_pickup_point_by_id_to_order') }}"
+            data-identifier="{{ order.dpdPickupPointId }}"
+            type="button"
+    >
+        <i class="ban icon"></i>
+        {{ 'clever_age.ui.pickup_point.change'|trans }}
+    </button>
+</div>

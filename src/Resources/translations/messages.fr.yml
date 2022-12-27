@@ -1,0 +1,23 @@
+clever_age:
+    ui:
+        map:
+            nearest_pickup_points: 'Nos points relais les plus proches :'
+            choose_this_pickup_point: Choisir ce point relais
+        pickup_point:
+            post_office: Poste
+            trader: Commerçant
+            chosen: 'Point relais sélectionné :'
+            change: Changer de point relais
+            opening_hours: Horaires d'ouverture
+            shipment_to: Au point relais
+    admin:
+        ui:
+            dpd_parameters:
+                menu:
+                    title: DPD
+                    label: Paramètres
+                title: Paramètres DPD
+                tipping_price: Prix de bascule
+            shipping_method:
+                dpd:
+                    title: Livraison en point relais DPD

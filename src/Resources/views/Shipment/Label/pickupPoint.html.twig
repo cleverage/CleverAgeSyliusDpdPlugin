@@ -1,0 +1,15 @@
+{% set dpdPickupPointId = order.dpdPickupPointId %}
+
+{% if dpdPickupPointId %}
+    {% set pickupPoint = cleverage_dpd_get_pudo_by_id(dpdPickupPointId) %}
+
+    {% if pickupPoint %}
+        <label class="pickup-point-label">
+            {{ 'clever_age.ui.pickup_point.shipment_to'|trans }}
+            <i>
+                "{{ pickupPoint.name }}, {{ pickupPoint.address }},
+                {{ pickupPoint.zipCode }}, {{ pickupPoint.city }}"
+            </i>
+        </label>
+    {% endif %}
+{% endif %}
