@@ -63,7 +63,7 @@ export class DpdMap {
                    <a onclick="selectDpdPickupPoint(this)"
                       id="dpd-choose-pickup-point"
                       class="btn btn-primary bg-primary"
-                      data-identifier="${pickupPoint.id}"
+                      data-identifier="${pickupPoint.pudoId}"
                     >
                        <span>Choisir ce point relais</span>
                    </a>
