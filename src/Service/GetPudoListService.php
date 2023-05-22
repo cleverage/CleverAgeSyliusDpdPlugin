@@ -41,7 +41,7 @@ final class GetPudoListService extends AbstractService
     public function byCartAddress(AddressInterface $cartAddress, array $options = []): array
     {
         $baseAddress = [
-            'address' => $cartAddress->getStreet(),
+            'address' => substr($cartAddress->getStreet(), 0, 60),
             'city' => $cartAddress->getCity(),
             'zipCode' => $cartAddress->getPostcode(),
             'countryCode' => $cartAddress->getCountryCode()
