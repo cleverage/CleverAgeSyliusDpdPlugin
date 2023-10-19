@@ -18,7 +18,7 @@ final class GetPudoListModelFactory implements ModelFactoryInterface
         $model = $this->create();
 
         if (isset($data['address'])) {
-            $model->setAddress($data['address']);
+            $model->setAddress(substr($data['address'], 0, 59));
         }
 
         if (isset($data['zipCode'])) {
