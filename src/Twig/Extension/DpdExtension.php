@@ -29,6 +29,10 @@ final class DpdExtension extends AbstractExtension
 
     public function getPudoById(string $pudoId): ?PudoItemModel
     {
-        return $this->getPudoDetailsService->byPudoId($pudoId);
+        try {
+            return $this->getPudoDetailsService->byPudoId($pudoId);
+        } catch (\Throwable $e) {
+            return null;
+        }
     }
 }
